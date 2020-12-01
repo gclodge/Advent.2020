@@ -48,10 +48,10 @@
   <ItemGroup>
     <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utility\Functions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Classes\" />
-    <Folder Include="Utility\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
