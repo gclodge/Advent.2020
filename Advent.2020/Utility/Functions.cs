@@ -8,9 +8,9 @@ namespace Advent._2020.Utility
     {
         public static int? FindRecordsThatSumTo(IEnumerable<int> recs, int sumValue, int len)
         {
-            var permutations = GetPermutations(recs, len);
+            //var filtRecs = recs.Where(rec => rec < sumValue);
 
-            foreach (var perm in GetPermutations(recs, len))
+            foreach (var perm in GetPermutations(recs.OrderBy(x => x), len))
             {
                 if (perm.Sum() == sumValue)
                 {
