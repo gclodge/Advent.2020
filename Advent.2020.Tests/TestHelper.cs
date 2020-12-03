@@ -30,7 +30,17 @@ namespace Advent._2020.Tests
 
         public static string GetInputFile(IDailyTests dt)
         {
-            return Path.Combine(TestDir, $"Day.{dt.Number.ToString().PadLeft(2, '0')}.Input.txt");
+            return GetFile(dt, "Input");
+        }
+
+        public static string GetTestFile(IDailyTests dt)
+        {
+            return GetFile(dt, "Test");
+        }
+
+        private static string GetFile(IDailyTests dt, string kernel)
+        {
+            return Path.Combine(TestDir, $"Day.{dt.Number.ToString().PadLeft(2, '0')}.{kernel}.txt");
         }
     }
 }
