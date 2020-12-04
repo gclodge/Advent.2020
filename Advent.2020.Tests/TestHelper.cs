@@ -33,9 +33,9 @@ namespace Advent._2020.Tests
             return GetFile(dt, "Input");
         }
 
-        public static string GetTestFile(IDailyTests dt)
+        public static string GetTestFile(IDailyTests dt, string kernel = null)
         {
-            return GetFile(dt, "Test");
+            return GetFile(dt, (kernel == null) ? "Test" : kernel);
         }
 
         private static string GetFile(IDailyTests dt, string kernel)

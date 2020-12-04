@@ -37,5 +37,31 @@ namespace Advent._2020.Utility
         {
             return CreateVector.Dense(new double[] { x, y });
         }
+
+        public static IEnumerable<IEnumerable<string>> SplitByByElement(IEnumerable<string> recs, string element)
+        {
+            var groups = new List<List<string>>();
+            var currGroup = new List<string>();
+            for (int i = 0; i < recs.Count(); i++)
+            {
+                string item = recs.ElementAt(i);
+                if (item != element)
+                {
+                    currGroup.Add(item);
+                }
+                else
+                {
+                    groups.Add(currGroup);
+                    currGroup = new List<string>();
+                }
+            }
+
+            if (currGroup.Count > 0)
+            {
+                groups.Add(currGroup);
+            }
+
+            return groups;
+        }
     }
 }
