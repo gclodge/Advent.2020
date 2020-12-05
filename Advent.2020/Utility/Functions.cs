@@ -6,6 +6,13 @@ using MathNet.Numerics.LinearAlgebra;
 
 namespace Advent._2020.Utility
 {
+    public enum HalfSplit
+    {
+        Top,
+        Bottom,
+        None
+    }
+
     public class Functions
     {
         public static int? FindRecordsThatSumTo(IEnumerable<int> recs, int sumValue, int len)
@@ -62,6 +69,20 @@ namespace Advent._2020.Utility
             }
 
             return groups;
+        }
+
+        public static IEnumerable<T> SplitInHalf<T>(IEnumerable<T> recs, HalfSplit split)
+        {
+            int halfCount = recs.Count() / 2;
+            switch (split)
+            {
+                case HalfSplit.Top:
+                    return recs.Skip(halfCount);
+                case HalfSplit.Bottom:
+                    return recs.Take(halfCount);
+                default:
+                    return recs;
+            }
         }
     }
 }
