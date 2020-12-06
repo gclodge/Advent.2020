@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\BoardingPass.cs" />
+    <Compile Include="Classes\CustomsForm.cs" />
     <Compile Include="Classes\Passports.cs" />
     <Compile Include="Classes\TobogganPassword.cs" />
     <Compile Include="Classes\TreeGrid.cs" />
