@@ -50,7 +50,6 @@ namespace Advent._2020.Tests.DailyTests
             var input = Helpers.FileHelper.ParseFile(TestFile);
 
             var handler = new BaggageHandler(input);
-
             int count = handler.CountBagsWithin(testType);
 
             Assert.IsTrue(count == 32);
