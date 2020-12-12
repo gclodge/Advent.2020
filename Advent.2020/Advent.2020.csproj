@@ -54,6 +54,7 @@
     <Compile Include="Classes\Joltage.cs" />
     <Compile Include="Classes\Passports.cs" />
     <Compile Include="Classes\SeatingMap.cs" />
+    <Compile Include="Classes\Ship.cs" />
     <Compile Include="Classes\TobogganPassword.cs" />
     <Compile Include="Classes\TreeGrid.cs" />
     <Compile Include="Helpers\FileHelper.cs" />
