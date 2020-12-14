@@ -50,6 +50,7 @@
     <Compile Include="Classes\BoardingPass.cs" />
     <Compile Include="Classes\Bus.cs" />
     <Compile Include="Classes\CustomsForm.cs" />
+    <Compile Include="Classes\DockingData.cs" />
     <Compile Include="Classes\Encoding.cs" />
     <Compile Include="Classes\Handheld.cs" />
     <Compile Include="Classes\Joltage.cs" />
