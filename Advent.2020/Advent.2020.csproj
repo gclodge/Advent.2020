@@ -54,6 +54,7 @@
     <Compile Include="Classes\Encoding.cs" />
     <Compile Include="Classes\Handheld.cs" />
     <Compile Include="Classes\Joltage.cs" />
+    <Compile Include="Classes\MemoryGame.cs" />
     <Compile Include="Classes\Passports.cs" />
     <Compile Include="Classes\SeatingMap.cs" />
     <Compile Include="Classes\Ship.cs" />
