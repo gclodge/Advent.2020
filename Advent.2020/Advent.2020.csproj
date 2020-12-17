@@ -49,6 +49,7 @@
     <Compile Include="Classes\Baggage.cs" />
     <Compile Include="Classes\BoardingPass.cs" />
     <Compile Include="Classes\Bus.cs" />
+    <Compile Include="Classes\ConwayCube.cs" />
     <Compile Include="Classes\CustomsForm.cs" />
     <Compile Include="Classes\DockingData.cs" />
     <Compile Include="Classes\Encoding.cs" />

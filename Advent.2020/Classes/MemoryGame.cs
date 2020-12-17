@@ -14,7 +14,7 @@ namespace Advent._2020.Classes
             var wordMap = new Dictionary<int, int>();
             int len = input.Count();
             //< Pre-populate the word map with the first occurence of the input (save the last number)
-            for(int i = 0; i < len - 1; i++)
+            foreach (int i in Enumerable.Range(0, len - 1))
             {
                 //< Map has the word as the key with the value being the 'turn' it was last spoken (here, i+1)
                 wordMap.Add(input.ElementAt(i), i + 1);

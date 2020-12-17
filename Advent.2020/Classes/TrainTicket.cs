@@ -131,17 +131,20 @@ namespace Advent._2020.Classes
 
         public Dictionary<int, string> GetValidFieldPositions()
         {
+            //< Get all nearby, valid tix
             var validTix = Nearby.Where(x => x.IsValid(this));
 
+            //< Instantiate a hashset of all 'solved' notes and a map of which indices have been solved by what note
             var usedFields = new HashSet<string>();
             var positions = new Dictionary<int, string>();
 
+            //< Grab the ticket count so we know how values a note must cover to be a potential solution
             int ticketCount = validTix.Count();
 
             //< Need to solve for each position within the tickets
             while (usedFields.Count != Mine.Length)
             {
-                for (int i = 0; i < Mine.Length; i++)
+                foreach (int i in Enumerable.Range(0, Mine.Length))
                 {
                     if (positions.ContainsKey(i))
                     {
@@ -151,12 +154,11 @@ namespace Advent._2020.Classes
 
                     //< Get all the values at this position in the ticket from nearby, valid tix
                     var vals = validTix.Select(x => x.GetValue(i));
-                    //< Get the map of number of times a note covered this index in nearby, valid tix
+                    //< Get the map of number of times a note covered a value in this index
                     var noteMap = GetNoteMap(vals);
                     //< Get the matching notes (notes which were covered by all tix)
                     var matching = noteMap.Where(kvp => !usedFields.Contains(kvp.Key))
-                                          .Where(kvp => kvp.Value == ticketCount)
-                                          .ToList();
+                                          .Where(kvp => kvp.Value == ticketCount);
                     //< Switch on the resulting count - if more than one, need to solve other positions first
                     if (matching.Count() > 1)
                     {
@@ -178,14 +180,18 @@ namespace Advent._2020.Classes
         private Dictionary<string, int> GetNoteMap(IEnumerable<int> vals)
         {
             var noteMap = new Dictionary<string, int>();
+            //< Iterate over each supplied value
             foreach (var v in vals)
             {
+                //< Get which notes had ranges that covered this value
                 foreach (var note in Ranges[v])
                 {
+                    //< If never encountered before, add to map with fresh count of zero
                     if (!noteMap.ContainsKey(note))
                     {
                         noteMap.Add(note, 0);
                     }
+                    //< Track the number of times this note covered a number
                     noteMap[note]++;
                 }
             }
@@ -195,6 +201,7 @@ namespace Advent._2020.Classes
         public Dictionary<string, int> GetMyTicketValues(Dictionary<int, string> fieldPositions)
         {
             var map = new Dictionary<string, int>();
+            //< For each supplied index, get the value of 'my' ticket at that index
             foreach (var kvp in fieldPositions)
             {
                 map.Add(kvp.Value, Mine.GetValue(kvp.Key));

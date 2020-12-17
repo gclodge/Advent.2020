@@ -54,6 +54,7 @@
     <Reference Include="System.Runtime.Serialization" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DailyTests\Day.17.cs" />
     <Compile Include="DailyTests\Day.16.cs" />
     <Compile Include="DailyTests\Day.15.cs" />
     <Compile Include="DailyTests\Day.14.cs" />
