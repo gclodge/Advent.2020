@@ -132,5 +132,18 @@ namespace Advent._2020.Utility
                 yield return res;
             }
         }
+
+        public static List<int> GetAllIndicesOf(string exp, HashSet<char> targets)
+        {
+            var indices = new List<int>();
+            foreach (int i in Enumerable.Range(0, exp.Length))
+            {
+                if (targets.Contains(exp[i]))
+                {
+                    indices.Add(i);
+                }
+            }
+            return indices;
+        }
     }
 }
