@@ -50,17 +50,17 @@ namespace Advent._2020.Tests.DailyTests
             }
         }
 
-        [TestMethod]
-        [Ignore] //< Ignored for now as it takes ~18s for all cases to run but gets the correct result
-        public void Test_KnownResults_30mil()
-        {
-            int target = 30000000;
-            foreach (var tup in KnownResults_30mil)
-            {
-                var word = MemoryGame.FindWordAtTurn(tup.Item1, target);
-                Assert.IsTrue(word == tup.Item2);
-            }
-        }
+        //< Ignored for now as it takes ~18s for all cases to run but gets the correct result
+        //[TestMethod] 
+        //public void Test_KnownResults_30mil()
+        //{
+        //    int target = 30000000;
+        //    foreach (var tup in KnownResults_30mil)
+        //    {
+        //        var word = MemoryGame.FindWordAtTurn(tup.Item1, target);
+        //        Assert.IsTrue(word == tup.Item2);
+        //    }
+        //}
 
         [TestMethod]
         public void PartOne()
