@@ -52,6 +52,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Allergen.cs" />
     <Compile Include="Classes\Baggage.cs" />
     <Compile Include="Classes\BoardingPass.cs" />
     <Compile Include="Classes\Bus.cs" />
